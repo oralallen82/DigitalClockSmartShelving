@@ -40,7 +40,7 @@ FACEBOOK: https://www.facebook.com/diymachines/
 
 #include <DS3231_Simple.h>
 DS3231_Simple Clock;
-
+f
 // Create a variable to hold the time data 
 DateTime MyDateAndTime;
 
@@ -53,8 +53,8 @@ DateTime MyDateAndTime;
 #define LEDDOWNLIGHT_COUNT 12
 
   //(red * 65536) + (green * 256) + blue ->for 32-bit merged colour value so 16777215 equals white
-int clockMinuteColour = 51200; //1677
-int clockHourColour = 140000000; //7712
+int clockMinuteColour = 5319953; //51200 1677
+int clockHourColour = 10040012; //140000000 147712
 
 int clockFaceBrightness = 0;
 
@@ -191,9 +191,9 @@ void displayTheTime(){
   }
  
  // Comment out the following three lines if you want midnight to be shown as 12:00 instead of 0:00
-//  if (firstHourDigit == 0){
-//    firstHourDigit = 12;
-//  }
+  if (firstHourDigit == 0){
+    firstHourDigit = 12;
+  }
  
   firstHourDigit = firstHourDigit % 10;
   displayNumber(firstHourDigit, 126, clockHourColour);
@@ -202,9 +202,9 @@ void displayTheTime(){
   int secondHourDigit = MyDateAndTime.Hour; //work out the value for the fourth digit and then display it
 
 // Comment out the following three lines if you want midnight to be shwon as 12:00 instead of 0:00
-//  if (secondHourDigit == 0){
-//    secondHourDigit = 12;
-//  }
+  if (secondHourDigit == 0){
+    secondHourDigit = 12;
+  }
  
  if (secondHourDigit > 12){
     secondHourDigit = secondHourDigit - 12;
